@@ -91,11 +91,24 @@ gap:30px;
 }
 
 
-audio{
-    width:100%;
-    filter:drop-shadow(0 0 10px #00fff7);
+.img01{
+    width:300px;
+    height: 150px;
+    border-radius: 10px;
+    
 }
-
+.img02{
+    width:300px;
+    height: 150px;
+    border-radius: 10px;
+    
+}
+.img03{
+    width:300px;
+    height: 150px;
+    border-radius: 10px;
+    
+}
 
 footer{
     text-align:center;
