@@ -19,7 +19,71 @@ body {
     color: var(--dark-text);
     line-height: 1.6;
 }
+/* Navegación Refinada */
+header {
+    background-color: var(--card-bg);
+    padding: 0 5%; /* Ajustado para control interno */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; /* Altura fija para consistencia */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Selector directo a la lista del HTML proporcionado */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
 
 header {
     background-color: var(--card-bg);

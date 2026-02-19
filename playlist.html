@@ -1,50 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicPro - Playlists</title>
+    <title>MusicPro - Playlists Premium</title>
     <link rel="stylesheet" href="css/playlist.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">MusicPro></div>
+            <div class="logo">MusicPro<span>></span></div>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="artistas.html">Artistas</a></li>
                 <li><a href="albunes.html">Álbumes</a></li>
-                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="playlist.html" class="active">Playlist</a></li>
             </ul>
         </nav>
     </header>
-    <section class="hero">
-        <h1>Playlist del momento</h1>
-    </section>
-    <section class="container">
-        <div class="grid">
-            <div class="card">
-                <h3>🔥 Top Global</h3>
-                <img src="https://cdn.shopify.com/s/files/1/0385/6229/files/Porter_Robinson_-_Worlds_grande.jpg?v=1482554186" class="img01" alt="imagen1">
-            </div>
-            <div class="card">
-                <h3>🎧 Chill Vibes</h3>
-               <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCvhv5prBc5ZOkwWXykmMcS1pzNta2ZeZ8jAVh-YkTbbfQ5cDk31ruso4tezkqM5ObNx5nMU_rI7xr75IOh9PNk748t9V44B4_UnXlKBQMadu06JZTQeKcw67e2JGlmBENK3BgILb4hB2F/s1600/b8fe22d2.jpg" class="img01" alt="imagen2">
-            </div>
-            <div class="card">
-                <h3>🚗 Road Trip</h3>
-                <img src="https://cdn.shopify.com/s/files/1/0385/6229/files/Justice_-_Woman_artwork_b00e0d15-fb58-46e2-aada-072c5f08e70a_large.jpg?v=1482616712" class="img01" alt="imagen3">
-            </div>
-            <div class="card">
-                <h3>🚗 Vibra suave</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwqBnVoeY14ioJmkl7Q1FvcMkGo2TEV7zaYrxY8dewTJHtLZc4XEYxSrKFOA2VVuz9Mo&s" class="img01" alt="imagen3">
-            </div>
-            
-            
 
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Playlist del momento</h1>
+            <p>Descubre los ritmos que están dominando el mundo.</p>
         </div>
     </section>
-    <footer>MusicPro © 2026</footer>
-    
+
+    <main class="container">
+        <div class="grid">
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0385/6229/files/Porter_Robinson_-_Worlds_grande.jpg?v=1482554186" class="img-fluid" alt="Top Global">
+                    <div class="overlay"><i data-lucide="play-circle"></i></div>
+                </div>
+                <div class="card-info">
+                    <h3>🔥 Top Global</h3>
+                    <p>Los éxitos número 1 hoy.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCvhv5prBc5ZOkwWXykmMcS1pzNta2ZeZ8jAVh-YkTbbfQ5cDk31ruso4tezkqM5ObNx5nMU_rI7xr75IOh9PNk748t9V44B4_UnXlKBQMadu06JZTQeKcw67e2JGlmBENK3BgILb4hB2F/s1600/b8fe22d2.jpg" class="img-fluid" alt="Chill Vibes">
+                    <div class="overlay"><i data-lucide="play-circle"></i></div>
+                </div>
+                <div class="card-info">
+                    <h3>🎧 Chill Vibes</h3>
+                    <p>Relájate y fluye.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0385/6229/files/Justice_-_Woman_artwork_b00e0d15-fb58-46e2-aada-072c5f08e70a_large.jpg?v=1482616712" class="img-fluid" alt="Road Trip">
+                    <div class="overlay"><i data-lucide="play-circle"></i></div>
+                </div>
+                <div class="card-info">
+                    <h3>🚗 Road Trip</h3>
+                    <p>Compañero ideal de viaje.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwqBnVoeY14ioJmkl7Q1FvcMkGo2TEV7zaYrxY8dewTJHtLZc4XEYxSrKFOA2VVuz9Mo&s" class="img-fluid" alt="Vibra Suave">
+                    <div class="overlay"><i data-lucide="play-circle"></i></div>
+                </div>
+                <div class="card-info">
+                    <h3>✨ Vibra Suave</h3>
+                    <p>Sonidos envolventes.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>MusicPro © 2026 | Hecho con pasión por el ritmo</p>
+    </footer>
+
+    <script>
+        // Inicializa los iconos de Lucide
+        lucide.createIcons();
+    </script>
 </body>
 </html>
