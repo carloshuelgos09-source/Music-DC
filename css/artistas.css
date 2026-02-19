@@ -19,10 +19,10 @@ body {
     color: var(--dark-text);
     line-height: 1.6;
 }
-/* Navegación Refinada */
+
 header {
     background-color: var(--card-bg);
-    padding: 0 5%; /* Ajustado para control interno */
+    padding: 0 5%; 
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -33,7 +33,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* Altura fija para consistencia */
+    height: 80px; 
 }
 
 .logo {
@@ -44,7 +44,7 @@ nav {
     letter-spacing: 1px;
 }
 
-/* Selector directo a la lista del HTML proporcionado */
+
 nav ul {
     display: flex;
     list-style: none;
@@ -195,7 +195,6 @@ header {
     gap: 30px;
 }
 
-/* Tarjetas */
 .artist-card {
     background: var(--card-bg);
     border-radius: 15px;
