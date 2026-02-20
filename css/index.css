@@ -1,6 +1,7 @@
+/* --- VARIABLES Y RESET --- */
 :root {
     --primary-red: #9e0707;
-    --dark-red: #9e0707;
+    --hover-red: #c10808;
     --black: #0a0a0a;
     --card-bg: rgba(44, 11, 11, 0.7);
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -20,10 +21,9 @@ body {
     overflow-x: hidden;
 }
 
-
-
+/* --- NAVEGACIÓN RESPONSIVE --- */
 header {
-    background: rgba(15, 0, 0, 0.9);
+    background: rgba(15, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -37,18 +37,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
+    padding: 1rem 2rem;
+    flex-wrap: wrap; /* Clave para que baje en móviles */
+    gap: 15px;
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: -1px;
 }
 
-.logo span {
-    color: var(--primary-red);
-}
+.logo span { color: var(--primary-red); }
 
 .nav-links {
     display: flex;
@@ -60,8 +60,8 @@ header {
     color: #ccc;
     text-decoration: none;
     font-weight: 400;
-    transition: var(--transition);
     font-size: 0.95rem;
+    transition: var(--transition);
 }
 
 .nav-links a:hover,
@@ -70,35 +70,36 @@ header {
     text-shadow: 0 0 10px var(--primary-red);
 }
 
-
-
+/* --- HERO SECTION --- */
 .hero {
     height: 60vh;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                 url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=1470&auto=format&fit=crop') center/cover;
-    margin-bottom: 50px;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #ddd;
     margin-bottom: 30px;
 }
 
+/* --- BOTÓN REPARADO --- */
 .btn-main {
+    display: inline-block;
     padding: 15px 35px;
-    background: var(--primary-red);
+    background-color: var(--primary-red);
     color: white;
     border: none;
     border-radius: 50px;
@@ -106,32 +107,30 @@ header {
     font-size: 1rem;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 10px 20px rgba(158, 7, 7, 0.3);
+    box-shadow: 0 10px 20px rgba(158, 7, 7, 0.4);
+    text-transform: uppercase;
 }
 
 .btn-main:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(158, 7, 7, 0.5);
-    background: #c10808;
+    box-shadow: 0 15px 30px rgba(158, 7, 7, 0.6);
+    background-color: var(--hover-red);
 }
-
 
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
-.section-title {
-    margin-bottom: 40px;
-}
+.section-title h2 { font-size: 2rem; }
 
 .underline {
     width: 60px;
     height: 4px;
     background: var(--primary-red);
-    margin-top: 10px;
+    margin: 10px 0 40px 0;
 }
 
 .grid {
@@ -146,44 +145,35 @@ header {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
-    cursor: pointer;
 }
 
-.card-img-container {
-    overflow: hidden;
-    height: 250px;
-}
+.card-img-container { height: 250px; overflow: hidden; }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.card-info {
-    padding: 20px;
-}
-
-.card h3 {
-    margin-bottom: 8px;
-    font-size: 1.4rem;
-}
-
-.card p {
-    color: #aaa;
-    font-size: 0.9rem;
-}
+.card-info { padding: 20px; }
+.card h3 { margin-bottom: 8px; font-size: 1.4rem; }
+.card p { color: #aaa; font-size: 0.9rem; }
 
 .card:hover {
     transform: translateY(-10px);
     background: rgba(158, 7, 7, 0.2);
     border-color: var(--primary-red);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-.card:hover img {
-    transform: scale(1.1);
+.card:hover img { transform: scale(1.1); }
+
+
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: center; 
+        text-align: center;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+    .hero { height: 50vh; }
 }
 
 footer {
@@ -191,129 +181,5 @@ footer {
     padding: 40px;
     color: #555;
     font-size: 0.9rem;
-}
-/* ===================================== */
-/* 🌍 RESPONSIVE GENERAL UNIVERSAL */
-/* Funciona para cualquier dispositivo */
-/* ===================================== */
-
-/* Ajustes globales fluidos */
-html {
-    font-size: clamp(14px, 1vw, 18px);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Contenedores siempre adaptables */
-.container,
-.nav-container {
-    width: 100%;
-    max-width: 1200px;
-    padding-left: clamp(15px, 4vw, 40px);
-    padding-right: clamp(15px, 4vw, 40px);
-}
-
-/* HERO adaptable */
-.hero {
-    height: clamp(400px, 60vh, 700px);
-    padding: clamp(20px, 5vw, 60px);
-}
-
-.hero h1 {
-    font-size: clamp(1.8rem, 5vw, 4rem);
-}
-
-.hero p {
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
-}
-
-
-.btn-main {
-    padding: clamp(10px, 2vw, 15px) clamp(20px, 5vw, 35px);
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
-}
-
-
-.nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(220px, 30%, 300px), 1fr));
-    gap: clamp(15px, 3vw, 30px);
-}
-
-
-.card-img-container {
-    height: clamp(180px, 25vw, 250px);
-}
-
-footer {
-    padding: clamp(20px, 4vw, 40px);
-    font-size: clamp(0.8rem, 1.2vw, 0.9rem);
-}
-
-
-@media (max-width: 480px) {
-
-    .nav-container {
-        padding: 0.8rem;
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 0.85rem;
-    }
-
-    .hero {
-        min-height: 250px;
-        padding: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 1.6rem;
-        letter-spacing: 1px;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .btn-main {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-        width: 100%;
-    }
-
-    .container {
-        padding: 1rem 1.5rem;
-    }
-
-    .card-img-container {
-        height: 300px;
-    }
-
-    .card-info {
-        padding: 1.5rem;
-    }
-
-    footer {
-        padding: 1.5rem 3%;
-        text-align: center;
-    }
-
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
